@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Carousel</title>
+    <script src="https://kit.fontawesome.com/c5d4023dee.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="carousel">
+                <div class="slide active" v-for="(slide, value) in slides">
+                    {{ slide }} : {{ value }} 
+                </div>
+                <!-- <div class="slide_overlay">
+                    <h3>titolo</h3>
+                    <p>descrizione</p>
+                </div> -->
+            </div>
+
+            <div class="carousel_arrow arrow-right" @click="nextSlide()">
+                <a href="#"><i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+
+            <div class="carousel_arrow arrow-left" @click="prevSlide()">
+                <a href="#"><i class="fa-solid fa-chevron-left"></i></a>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
