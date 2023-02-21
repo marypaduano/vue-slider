@@ -40,7 +40,7 @@ createApp({
         nextSlide() {
             const lastIndex = this.slides.length - 1
             if (this.currentIndex < lastIndex) {
-                currentIndex++
+                this.currentIndex++
             }
             else {
                 this.currentIndex = 0
