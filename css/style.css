@@ -16,6 +16,11 @@ img{
     border-radius: 20px;
 }
 
+.title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
 .slide.active {
 	display: block;
 }
@@ -45,13 +50,13 @@ img{
     background-color: rgba(42, 42, 42, 0.586);
     border-radius: 15px;
     padding: 5px;
-	top: 30%;
+	top: 45%;
 }
 
 .carousel_arrow.arrow-left {
-	left: 90px;
+	left: 20px;
 }
 
 .carousel_arrow.arrow-right {
-	right: 90px;
+	right: 20px;
 }

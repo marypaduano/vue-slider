@@ -13,20 +13,19 @@
     <div id="app">
         <div class="container">
             <div class="carousel">
-                <div class="slide active" v-for="(slide, value) in slides">
-                    {{ slide }} : {{ value }} 
+                <div v-for="(slide, index) in slides" class="slide" :class="index === currentIndex ? 'active' : '' " >
+                   <img :src="slide.photo" alt=""/>
+                <div class="slide_overlay">
+                    <h3>{{ slide.title }}</h3>
+                    <p>{{ slide.description }}</p>
                 </div>
-                <!-- <div class="slide_overlay">
-                    <h3>titolo</h3>
-                    <p>descrizione</p>
-                </div> -->
             </div>
 
-            <div class="carousel_arrow arrow-right" @click="nextSlide()">
+            <div @click="nextSlide" class="carousel_arrow arrow-right">
                 <a href="#"><i class="fa-solid fa-chevron-right"></i></a>
             </div>
 
-            <div class="carousel_arrow arrow-left" @click="prevSlide()">
+            <div @click="prevSlide" class="carousel_arrow arrow-left">
                 <a href="#"><i class="fa-solid fa-chevron-left"></i></a>
             </div>
         </div>

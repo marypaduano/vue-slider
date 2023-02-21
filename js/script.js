@@ -5,7 +5,6 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            message: 'Hello Vue!',
             slides: [
                 {
                     photo: './img/cappadocia.jpg',
@@ -32,42 +31,33 @@ createApp({
                     title: "Napoli",
                     description: "Vista del golfo di Napoli da Fuorigrotta",
                 },
-            ]
+            ],
+            currentIndex: 0
         }
     },
     methods: {
 
         nextSlide() {
-            let currentIndex = 0
-            let photoEl = document.querySelectorAll('.slide')
-            const lastIndex = photoEl.length - 1
-
-            photoEl[currentIndex].classList.remove('active')
-
-            if (currentIndex < lastIndex) {
+            const lastIndex = this.slides.length - 1
+            if (this.currentIndex < lastIndex) {
                 currentIndex++
             }
             else {
-                currentIndex = 0
+                this.currentIndex = 0
             }
-
-            photoEl[currentIndex].classList.add('active')
         },
 
         prevSlide() {
-            let currentIndex = 0
-            let photoEl = document.querySelectorAll('.slide')
-            photoEl[currentIndex].classList.remove('active')
-
-            if (currentIndex > 0) {
-                currentIndex--
+            const lastIndex = this.slides.length - 1
+            if (this.currentIndex > 0) {
+                this.currentIndex--
             }
             else {
-                currentIndex = photoEl.length - 1
+                this.currentIndex = lastIndex
             }
 
-            photoEl[currentIndex].classList.add('active')
         }
     }
 }).mount('#app')
+
 
